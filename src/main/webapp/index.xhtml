@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Calculadora</title>
+        <h:outputStylesheet library="primefaces" name="primeicons/primeicons.css"/>
+    </h:head>
+    <h:body>
+
+
+        <h:form>
+            <p:card style="width: 25rem; margin-bottom: 2em">
+                <f:facet name="title">
+                   Suma de Dos Numeros
+                </f:facet>
+
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel for="ta" value="Numero 1:" />
+                    <p:inputText id="ta" value="#{beansuma.suma.a}" />
+
+                    <h:outputLabel for="tb" value="Numero 2:" />
+                    <p:inputText id="tb" value="#{beansuma.suma.b}" />
+                </h:panelGrid>
+
+                <p:commandButton value="Calcular" update="prpta" icon="ui-icon-check" />
+
+            </p:card>
+            
+            <p:card id="prpta" style="width: 25rem; margin-bottom: 2em">
+                
+                    <h:outputText value="La Suma es:  #{beansuma.suma.sumatotal()}" />
+               
+            </p:card>    
+
+        </h:form>
+
+    </h:body>
+
+    
+</html>
